@@ -18,7 +18,7 @@ if __name__ == "__main__":
     api_data = get_api_data(api_url)
     
     if api_data:
-        for key in list(api_data['billboard_key'].keys())[1:-1]:
+        for key in list(api_data['billboard_type'].keys())[1:-1]:
             print(key)
             indexs = [item["rank"] for item in api_data['result']['%s' % key]]
 
