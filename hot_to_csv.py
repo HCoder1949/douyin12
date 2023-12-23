@@ -14,17 +14,17 @@ if __name__ == "__main__":
     time = time.strftime("%Y-%m-%d %H_%M_%S", time.localtime())
     year, month, day = time.split()[0].split("-")
     
-    api_url = "https://api.oioweb.cn/api/common/HotList"  # API接口地址
+    api_url = "https://creator.douyin.com/aweme/v1/creator/data/billboard_list/?billboard_type_list=1"  # API接口地址
     api_data = get_api_data(api_url)
     
     if api_data:
         for key in list(api_data['result'].keys())[1:-1]:
             print(key)
-            indexs = [item["index"] for item in api_data['result']['%s' % key]]
+            indexs = [item["rank"] for item in api_data['result']['%s' % key]]
 
             titles = [item["title"] for item in api_data['result']['%s' % key]]
 
-            hots = [item["hot"] for item in api_data['result']['%s' % key]]
+            hots = [item["value"] for item in api_data['result']['%s' % key]]
 
             hrefs = [item["href"] for item in api_data['result']['%s' % key]]
             
