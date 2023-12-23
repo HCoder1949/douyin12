@@ -14,7 +14,7 @@ if __name__ == "__main__":
     time = time.strftime("%Y-%m-%d %H_%M_%S", time.localtime())
     year, month, day = time.split()[0].split("-")
     
-    api_url = "https://creator.douyin.com/aweme/v1/creator/data/billboard/?billboard_type=1"  # API接口地址
+    api_url = "https://creator.douyin.com/aweme/v1/creator/data/billboard_list/?billboard_type_list=1"  # API接口地址
     api_data = get_api_data(api_url)
     
     if api_data:
