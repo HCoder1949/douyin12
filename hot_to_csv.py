@@ -18,15 +18,15 @@ if __name__ == "__main__":
     api_data = get_api_data(api_url)
     
     if api_data:
-        for key in list(api_data['element_list'].keys())[1:-1]:
+        for key in list(api_data['billboard_data'].keys())[1:-1]:
             print(key)
-            indexs = [item["rank"] for item in api_data['element_list']['%s' % key]]
+            indexs = [item["rank"] for item in api_data['billboard_data']['%s' % key]]
 
-            titles = [item["title"] for item in api_data['element_list']['%s' % key]]
+            titles = [item["title"] for item in api_data['billboard_data']['%s' % key]]
 
-            hots = [item["value"] for item in api_data['element_list']['%s' % key]]
+            hots = [item["value"] for item in api_data['billboard_data']['%s' % key]]
 
-            hrefs = [item["href"] for item in api_data['element_list']['%s' % key]]
+            hrefs = [item["href"] for item in api_data['billboard_data']['%s' % key]]
             
             path = os.path.join('archives',key,year,month,day)
             os.makedirs(path, exist_ok=True)
